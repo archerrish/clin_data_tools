@@ -3,7 +3,7 @@ package:
   version: "0.1.0"             # 当前版本号
 
 source:
-  path: ..                     # 指定源码路径
+  path: ..                      # 指定源码路径
 
 build:
   noarch: python               # 指定为跨平台 Python 包
@@ -16,6 +16,9 @@ requirements:
     - pip                     # 使用 pip 代替 setuptools 的依赖处理
     - setuptools
     - wheel                   # 确保打包工具完整
+    - pandas >=1.0
+    - openpyxl >=3.0
+    - numpy >=1.22
   run:
     - python >=3.8
     - pandas >=1.0
@@ -25,6 +28,8 @@ requirements:
 test:
   imports:
     - clin_data_tools          # 测试包是否能正确导入
+  source_files:
+    - tests
   commands:
     - pytest tests/
   requires:
