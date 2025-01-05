@@ -1,6 +1,6 @@
 package:
   name: clin_data_tools        # 包名
-  version: "0.1.0"             # 当前版本号
+  version: "0.1.1"             # 当前版本号
 
 source:
   path: ..                      # 指定源码路径
@@ -33,10 +33,10 @@ test:
   commands:
     - pytest tests/
   requires:
-      - pytest
-      - pandas
-      - openpyxl
-      - numpy
+    - pytest
+    - pandas
+    - openpyxl
+    - numpy
 
 about:
   home: https://github.com/archerrish/clin_data_tools

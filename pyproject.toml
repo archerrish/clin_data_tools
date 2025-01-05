@@ -1,3 +1,27 @@
 [build-system]
-requires = ["setuptools", "wheel"]
+requires = ["setuptools>=42", "wheel"]
 build-backend = "setuptools.build_meta"
+
+[project]
+name = "clin_data_tools"
+version = "0.1.1"
+description = "A toolkit for clinical data validation and manipulation"
+readme = "README.md"
+license = {text = "GPL"}
+authors = [
+    {name = "Juntao Xie", email = "archerrish@gmail.com"}
+]
+dependencies = [
+    "pandas>=1.0",
+    "numpy>=1.22",
+    "openpyxl>=3.0"
+]
+requires-python = ">=3.8"
+
+[project.scripts]
+check_col = "clin_data_tools.check_col:main"
+
+[tool.setuptools]
+packages = ["clin_data_tools"]
+package-dir = {"" = "src"}
+include-package-data = true

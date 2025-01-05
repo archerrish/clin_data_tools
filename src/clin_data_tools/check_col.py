@@ -1,4 +1,5 @@
 import pandas as pd
+import argparse
 
 def check_col(file_path, col_name):
     """
@@ -26,3 +27,23 @@ def check_col(file_path, col_name):
 
     except Exception as e:
         raise RuntimeError(f"Error in check_col: {e}")
+
+def main():
+    """
+    命令行入口函数，解析参数并调用 check_col
+    """
+    parser = argparse.ArgumentParser(description="Check a column in a file for missing values and uniqueness.")
+    parser.add_argument("file_path", help="Path to the input file (CSV or Excel).")
+    parser.add_argument("col_name", help="Name of the column to check.")
+    args = parser.parse_args()
+
+    try:
+        result = check_col(args.file_path, args.col_name)
+        print(f"Column '{args.col_name}' in file '{args.file_path}':")
+        print(f"  - Missing values: {result['missing_values']}")
+        print(f"  - Duplicates: {result['duplicates']}")
+    except Exception as e:
+        print(f"Error: {e}")
+
+if __name__ == "__main__":
+    main()
