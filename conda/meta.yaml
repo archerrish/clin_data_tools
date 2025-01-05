@@ -8,7 +8,7 @@ source:
 build:
   # noarch: python               # 指定为跨平台 Python 包
   script: pip install .        # 使用 pip 安装，替代 python setup.py install
-  number: 1                    # 构建编号
+  number: 2                    # 构建编号
 
 requirements:
   build:
