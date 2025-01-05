@@ -1,26 +1,31 @@
+{% set name = "clin_data_tools" %}
+{% set version = "0.1.2" %}
+
 package:
-  name: clin_data_tools        # 包名
-  version: "0.1.1"             # 当前版本号
+  name: {{ name }}
+  version: {{ version }}
 
 source:
-  path: ..                      # 指定源码路径
+  path: ..
 
 build:
-  # noarch: python               # 指定为跨平台 Python 包
-  script: pip install .        # 使用 pip 安装，替代 python setup.py install
-  number: 2                    # 构建编号
+  # 不要 noarch: python
+  script: pip install .
+  number: 3
+  entry_points:
+    - check_col = clin_data_tools.check_col:main
 
 requirements:
   build:
-    - python >=3.8
-    - pip                     # 使用 pip 代替 setuptools 的依赖处理
+    - python {{ python }}        # <-- 用 Jinja2 变量，而不是 "python >=3.8"
+    - pip
     - setuptools
-    - wheel                   # 确保打包工具完整
+    - wheel
     - pandas >=1.0
     - openpyxl >=3.0
     - numpy >=1.22
   run:
-    - python >=3.8
+    - python {{ python }}        # <-- 同理
     - pandas >=1.0
     - openpyxl >=3.0
     - numpy >=1.22
