@@ -5,13 +5,10 @@ setup(
     version="0.1.0",
     description="A toolkit for clinical data validation and manipulation",
     packages=find_packages(),
-    install_requires=[
-        "pandas>=1.0",
-        "openpyxl>=3.0"
+    classifiers=[
+        "Programming Language :: Python :: 3",
+        "License :: OSI Approved :: MIT License",
+        "Operating System :: OS Independent",
     ],
-    entry_points={
-        "console_scripts": [
-            "check-col=clin_data_tools.check_col:check_col",
-        ],
-    },
+    python_requires=">=3.8",
 )

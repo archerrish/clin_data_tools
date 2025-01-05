@@ -1,6 +1,7 @@
 # Python 缓存文件
 __pycache__/
 *.py[cod]
+*.pyo
 
 # 虚拟环境
 venv/
@@ -13,3 +14,11 @@ dist/
 
 # 测试文件
 *.csv
+
+# Conda 构建目录
+conda-bld/
+build/
+dist/
+
+# Jupyter Notebook 输出（如果有）
+.ipynb_checkpoints/
