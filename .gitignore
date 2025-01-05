@@ -1,0 +1,15 @@
+# Python 缓存文件
+__pycache__/
+*.py[cod]
+
+# 虚拟环境
+venv/
+.env/
+
+# 构建文件
+build/
+dist/
+*.egg-info/
+
+# 测试文件
+*.csv

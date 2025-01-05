@@ -1,0 +1,36 @@
+package:
+  name: clin_data_tools       # 包名
+  version: "0.1.0"            # 版本号
+
+source:
+  path: ..                    # 指定源码路径，使用当前项目目录
+
+build:
+  noarch: python              # 架构无关，适用于所有系统
+  script: python setup.py install  # 使用 setup.py 构建包
+  number: 0                   # 构建编号
+
+requirements:
+  build:
+    - python >=3.8
+    - setuptools
+  run:
+    - python >=3.8
+    - pandas >=1.0
+    - openpyxl >=3.0
+
+test:
+  imports:
+    - clin_data_tools         # 测试包的导入
+  commands:
+    - pytest tests            # 运行测试
+
+about:
+  home: https://github.com/archerrish/clin_data_tools # 项目主页
+  license: GPL-3.0
+  license_file: LICENSE
+  summary: "A toolkit for clinical data validation and manipulation"
+  description: |
+    Clin Data Tools provides utilities for validating clinical data files,
+    including CSV and Excel.
+  dev_url: https://github.com/your-username/clin_data_tools
