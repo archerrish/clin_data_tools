@@ -8,6 +8,7 @@ def check_col(file_path, col_name):
     :return: 字典，包含是否有空值和是否唯一
     """
     try:
+        file_path = str(file_path)  # Convert LocalPath to string
         if file_path.endswith('.csv'):
             df = pd.read_csv(file_path)
         elif file_path.endswith('.xlsx'):

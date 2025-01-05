@@ -23,17 +23,10 @@ requirements:
     - numpy >=1.22
 
 test:
-  files:
-    - tests/                # 包含整个 tests/ 目录
-    - test.csv              # 包含测试数据文件（如果需要）
   imports:
     - clin_data_tools          # 测试包是否能正确导入
   commands:
-    # - pytest tests/            # 运行 pytest 测试
-    - echo "Current Directory:"
-    - dir                     # 打印当前工作目录
-    - dir tests/              # 检查 tests/ 目录是否存在
-    - pytest -v tests/
+    - pytest tests/
   requires:
       - pytest
       - pandas
